@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3</title>
+
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+    input {
+      margin: 10px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <login-form></login-form>
+    <hr>
+    <p>Example won't log anything in the console at this state in code.</p>
+    <p>If you click on e.g. "Pass password text as a string", the input field is focussed.</p>
+    <p>This example shows how to simply pass label text as a string to the "custom-input" tag.</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script>
+    let app = Vue.createApp({})
+
+    app.component('login-form', {
+      template: `
+        <form @submit.prevent="handleSubmit">
+          <h1>{{ title }}</h1>
+          <custom-input type="email" label="Pass email text as a string" />
+          <custom-input type="password" label="Pass password text as a string" />
+          <button>Submit things</button>
+        </form>
+      `,
+      components: ['custom-input'],
+      data() {
+        return {
+          title: 'Login Form',
+          email: '',
+          password: '',
+        }
+      },
+      methods: {
+        handleSubmit() {
+          console.log(this.email, this.password)
+        }
+      }
+    })
+
+    app.component('custom-input', {
+      template: `
+        <label>
+          {{ label }}
+          <input type="text" />
+        </label>
+      `,
+      props: ['label']
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>

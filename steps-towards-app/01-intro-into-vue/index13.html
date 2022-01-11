@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3</title>
+
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+    input {
+      margin: 10px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <login-form></login-form>
+    <hr>
+    <p>Enter data into input fields and hit submit.</p>
+    <p>Hit submit each time you enter a different data set.</p>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script>
+    let app = Vue.createApp({})
+
+    app.component('login-form', {
+      template: `
+        <form @submit.prevent="handleSubmit">
+          <h1>{{ title }}</h1>
+          <custom-input v-model="email" v-bind:label="emailLabel" />
+          <custom-input v-model="password" v-bind:label="passwordLabel" />
+          <button>Submit things</button>
+        </form>
+      `,
+      components: ['custom-input'],
+      data() {
+        return {
+          title: 'Login Form',
+          email: '',
+          password: '',
+          emailLabel: 'Email text blabla',
+          passwordLabel: 'Password text blabla'
+        }
+      },
+      methods: {
+        handleSubmit() {
+          console.log(this.email, this.password)
+        }
+      }
+    })
+
+    app.component('custom-input', {
+      template: `
+        <label>
+          {{ label }}
+          <input type="text" v-model="inputValue" />
+        </label>
+      `,
+      props: ['label', 'modelValue'],
+      computed: {
+        inputValue: {
+          get() {
+            return this.modelValue
+          },
+          set(value) {
+            this.$emit('update:modelValue', value)
+          }
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3</title>
+
+  <style>
+    .box {
+      background-color: purple;
+      height: 200px;
+      width: 200px;
+    }
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+
+    <h3>{{ greeting }}</h3>
+    <p>Click the button to toggle the box.</p>
+    <button @click="toggleBox">Click to toggle the box (via function)</button>
+    <div class="box" v-if="isVisible"></div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script>
+    let app = Vue.createApp({
+      data: function() {
+        return {
+          greeting: 'Toggle a box via function',
+          isVisible: false
+        }
+      },
+      methods: {
+        toggleBox() {
+          this.isVisible = !this.isVisible
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>

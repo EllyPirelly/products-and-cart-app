@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 3</title>
+
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+
+    <h3>{{ greeting }}</h3>
+    <input @keyup.enter="greet(greeting + 'with something passed into the function')" v-model="greeting">
+    <p>Place cursor into input field and hit enter. This will log the value of "greeting" into the console plus the added text within the greet function.</p>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script>
+    let app = Vue.createApp({
+      data: function() {
+        return {
+          greeting: 'Aditionally pass something after this: ',
+        }
+      },
+      methods: {
+        greet(greeting) {
+          console.log(greeting)
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
