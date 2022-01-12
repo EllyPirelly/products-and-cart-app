@@ -1,9 +1,9 @@
 # Vue 3 - Basic Vue Examples
 - all single html files have all of their code in ONE file to  make it easier to understand what's referenced where
-- they most make sense looking at them in order 01 to 17
+- they make sense most looking at them in order 01 to 17
 - they have Vue enabled via CDN (see `<script>` tag)
-- to start a single html file, open it in the browser of your choice
-- development is covered in https://www.youtube.com/watch?v=FXpIoQ_rT_c up until 1:14:31
+- to start a single html file, open it in the browser of your choice (within Visual Studio Code I personally prefer using the extension "Go Live" for this)
+- Basic Vue Examples are covered in https://www.youtube.com/watch?v=FXpIoQ_rT_c up to 1:14:31
 
 ### index01.html
 - shows the absolut simplest Vue application, with a minimum of data

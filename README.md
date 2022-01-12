@@ -2,25 +2,21 @@
 
 ## What is this about?
 
-Demo of a website that contains products you can add and delete off a cart.</br>
-Products come in via `.json`, not via `fetch`.</br>
-A code-along to freecodecamp's free course, see YouTube video [Vue.js Course for Beginners [2021 Tutorial]](https://www.youtube.com/watch?v=FXpIoQ_rT_c)</br>
-
-- up to 1:14:31, it's working on basic code of the project in single html files; Vue comes in via CDN, see `<script src="https://unpkg.com/vue@next"></script>` tag, also see here https://v3.vuejs.org/guide/installation.html#release-notes
-- from 1:14:31 to 2:15, it's about having the application code in a more modular environment; Vue comes in via CDN, see `<script src="https://unpkg.com/vue@next"></script>` tag
-- from 2:26 on, it's introducing Vue CLI and making the project more dynamic
-
+Demo of a website that contains products you can add and delete off of a cart.</br>
+</br>
+It's a code-along to freecodecamp's free course, see YouTube video [Vue.js Course for Beginners [2021 Tutorial]](https://www.youtube.com/watch?v=FXpIoQ_rT_c).</br>
 ### Visuals
 ![home01](./screenshots/home01.png)
 ![home02](./screenshots/home02.png)
 ![products01](./screenshots/products01.png)
 ![pastorders01](./screenshots/pastorders01.png)
 
-The code you see in my project is not built from scratch.</br>
-It is based on [this branch/code](https://github.com/gwenf/vue3-fcc-course-basic-product-cart-demo/tree/home-page-1), coded along until the final result, so it already came with HTML and styling.</br>
-I did not clone the `starter-code` branch of that repository but the `home-page-1`.</br>
-If you are interested in the final result solved by the tutor, [see their final branch here](https://github.com/gwenf/vue3-fcc-course-vue-cli-product-cart-demo/tree/4-reusable-components).</br>
-In my example at point of writing the "Past Products" page ist still static.</br>
+- the code you see in my project is **not** built from scratch by me, it already came with HTML and CSS
+- my code is based on [the tutorial branch/code "home-page-1"](https://github.com/gwenf/vue3-fcc-course-basic-product-cart-demo/tree/home-page-1), then coded along further until the final result
+- I did not clone the `starter-code` branch of the tutorial repository, but the `home-page-1`
+- if you are interested in the final result solved by the tutor, [see their final branch "4-reusable-components" here](https://github.com/gwenf/vue3-fcc-course-vue-cli-product-cart-demo/tree/4-reusable-components)
+- in my example at point of writing this `README`, the "Past Products" page is still static
+- products come in via `.json`, not via `fetch`
 
 ### How to run it?
 - clone the repo
@@ -38,17 +34,21 @@ In my example at point of writing the "Past Products" page ist still static.</br
 
 ### Nice to know - Steps towards product app
 
-The freecodecamp course provides a great step by step tutorial, starting with the most basic learning regarding Vue 3.</br>
+The freecodecamp YouTube tutorial https://www.youtube.com/watch?v=FXpIoQ_rT_c provides a great step by step Vue 3 learning, starting with the most basic code.</br>
 
-#### Find the basic learning and code-along examples here:
+**Up to 1:14:31**
+- it's working on Basic Vue Examples in single html files, to get familar with Vue
+- Vue comes in via CDN, see `<script src="https://unpkg.com/vue@next"></script>` tag, also see here https://v3.vuejs.org/guide/installation.html#release-notes
+- find the basic code-along examples here: [Intro into Vue - Basic Vue 3 Examples](https://github.com/EllyPirelly/products-and-cart-app/tree/main/steps-towards-app/intro-into-vue)
 
-[01 Intro into Vue - Simple Examples](https://github.com/EllyPirelly/products-and-cart-app/tree/main/steps-towards-app/01-intro-into-vue)
+**From 1:14:31 to 2:15**
+- it's about having the (given) Products and Cart App code in a Vue 3 environment, clearing the path of understanding how everything works in a context of Vue 3
+- Vue 3 comes in via CDN, see `<script src="https://unpkg.com/vue@next"></script>` tag
+- as everything is based on importing Vue via CDN `<script src="https://unpkg.com/vue@next"></script>` this keeps us of going full dynamic as we now would have to make data persistable via localstorage to not change the cart while changing the page (this would be the point in time to introduce Vue CLI)
+- **I decided to not keep this part of code-along code**
 
-#### Find the Basic Products App here, still without Vue CLI, Vue coming in via CDN:
-
-[02 - Basic Product App](https://github.com/EllyPirelly/products-and-cart-app/tree/main/steps-towards-app/02-basic-product-app-via-script)
-
-I do not plan to work with the Basic Products App again, only have it here for completeness sake.
+**From 2:26 on**
+- it's introducing Vue CLI and making the (given) Products and Cart App code more dynamic
 
 ### These are the sources of the tutor
 - [Static files from initial lessons](https://github.com/gwenf/vue3-fcc-course-static-code)
@@ -59,7 +59,7 @@ I do not plan to work with the Basic Products App again, only have it here for c
 
 - https://cli.vuejs.org/guide/installation.html
 - run `npm install -g @vue/cli`
-- version at time of wriing `@vue/cli 4.5.15`
+- version at time of writing `@vue/cli 4.5.15`
 
 ### Create a Vue Project
 
